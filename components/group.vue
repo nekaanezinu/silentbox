@@ -1,7 +1,7 @@
 <template>
     <section id="silentbox-group">
-        <slot></slot>
-        <silentbox-overlay></silentbox-overlay>
+        <slot />
+        <silentbox-overlay :overlay_class="overlay_class"/>
     </section>
 </template>
 
@@ -10,6 +10,7 @@
 
     export default {
         name: 'SilentboxGroup',
+        props: ['overlay_class'],
         data() {
             return {
                 overlayVisibility: false,

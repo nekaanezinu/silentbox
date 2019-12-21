@@ -1,5 +1,5 @@
 <template>
-    <div id="silentbox-overlay" v-if="isVisible">
+    <div id="silentbox-overlay" :class="overlay_class" v-if="isVisible">
         <div id="silentbox-overlay__background" @click.stop="closeSilentboxOverlay"></div>
 
         <div id="silentbox-overlay__content" @click.stop="closeSilentboxOverlay">
@@ -29,6 +29,7 @@
     export default {
         name: 'SilentboxOverlay',
         mixins: [ VideoUrlDecoderMixin ],
+        props: ['overlay_class'],
         data() {
             return {
                 video: false
